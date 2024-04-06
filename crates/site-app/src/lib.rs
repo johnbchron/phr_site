@@ -8,7 +8,9 @@ pub fn App() -> impl IntoView {
   provide_meta_context();
 
   view! {
+    <Style>{include_str!("../style/fonts.css")}</Style>
     <Stylesheet id="leptos" href="/pkg/site.css"/>
+    <Link rel="preload" href="/fonts/inter.ttf" as_="font" type_="font/ttf" crossorigin="anonymous" />
 
     <Title text="Prayer House Reitnau"/>
     <Html lang="en" />
