@@ -37,7 +37,7 @@ pub fn HomePage() -> impl IntoView {
         </div>
 
         // 3x2 grid
-        <div class="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-8 sm:grid-rows-4 grid-rows-3 grid-flow-row-dense gap-4 auto-rows-min">
+        <div class="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-8 sm:grid-rows-4 md:grid-rows-3 grid-flow-row-dense gap-4 auto-rows-min">
           <TextBox title="Values">
             <p class="leading-tight">
               "We love prayer. Prayer is essential. Prayer is meeting God. Through prayer we truly enter into our calling as priests. Prayer is one of the most beautiful things in life. Prayer is getting to a point where you focus on hearing God, and you change things. Through prayer you open up a space in your life for the Holy Spirit to work in you."
@@ -91,9 +91,9 @@ pub fn HomePage() -> impl IntoView {
                   "We need fundraising for renovating the prayer room. If you feel led, please give."
                 </p>
                 <div class="flex-1" />
-                <div class="relative text-xs h-12 rounded-lg w-full flex items-center justify-center sm:w-auto mx-3 border-2 border-black/20 leading-tight">
+                <div class="relative text-xs h-12 rounded-lg w-full flex items-center justify-center sm:w-auto border-2 border-black/20 leading-tight">
                   <div class="absolute inset-x-2 -inset-y-2 bg-white" />
-                  <p class="absolute inset-0 px-2">
+                  <p class="absolute inset-0 px-2 sm:px-4">
                     "Give button not available at this time. For now, "
                     <a
                       href="mailto:contact@prayerhousereitnau.org"
