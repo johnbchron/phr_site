@@ -122,7 +122,7 @@ pub fn TextBox(
 ) -> impl IntoView {
   view! {
     <div class={format!("flex flex-col gap-1 p-4 bg-white border-2 border-black/80 rounded-xl shadow-custom {extra_class}")}>
-      <p class="text-2xl font-semibold tracking-tight">{title}</p>
+      <p class="pl-1 text-2xl font-semibold tracking-tight">{title}</p>
       {children()}
     </div>
   }
