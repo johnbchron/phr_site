@@ -70,7 +70,7 @@ pub fn HomePage() -> impl IntoView {
           <TextBox title="Action" extra_class="row-span-2 sm:row-span-1 sm:col-span-2 md:col-span-3">
             <div class="grid grid-cols-3 gap-6 pb-2 flex-1">
               <div class="flex flex-col gap-2">
-                <p class="text-lg font-semibold tracking-tight">"Pray with us"</p>
+                <p class="text-lg font-semibold tracking-tight">"Pray With Us"</p>
                 <p class="leading-tight">
                   "Come join us in the prayer room. Pray with us, learn prayer with us, or participate in an event."
                 </p>
@@ -78,7 +78,7 @@ pub fn HomePage() -> impl IntoView {
                 <ActionButton text="Pray With Us" href="mailto:contact@prayerhousereitnau.org" />
               </div>
               <div class="flex flex-col gap-2">
-                <p class="text-lg font-semibold tracking-tight">"Help us"</p>
+                <p class="text-lg font-semibold tracking-tight">"Build With Us"</p>
                 <p class="leading-tight">
                   "We need people to help us build and renovate the prayer room. If you have practical skills and time, please come help us."
                 </p>
@@ -86,7 +86,7 @@ pub fn HomePage() -> impl IntoView {
                 <ActionButton text="Help Us" href="mailto:contact@prayerhousereitnau.org" />
               </div>
               <div class="flex flex-col gap-2">
-                <p class="text-lg font-semibold tracking-tight">"Give"</p>
+                <p class="text-lg font-semibold tracking-tight">"Support Us"</p>
                 <p class="leading-tight">
                   "We need fundraising for renovating the prayer room. If you feel led, please give."
                 </p>
