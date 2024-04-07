@@ -28,7 +28,7 @@ pub fn App() -> impl IntoView {
 #[component]
 pub fn HomePage() -> impl IntoView {
   view! {
-    <div class="w-full bg-cyan-50/80 text-cyan-950">
+    <div class="w-full bg-cyan-50/80 text-cyan-950 px-4">
       <div class="mx-auto container flex flex-col py-12 gap-6 min-h-screen">
         // title block
         <div class="flex flex-col gap-2 px-12">
@@ -44,7 +44,7 @@ pub fn HomePage() -> impl IntoView {
             </p>
           </TextBox>
           <TextBox title="Vision" extra_class="row-span-2 col-span-1 sm:row-span-1 sm:col-span-2">
-            <div class="flex flex-row gap-4">
+            <div class="flex flex-col xs:flex-row gap-4">
               <p class="leading-tight">
                 "God has called us to settle in this place and build a community, which is a family of fellowship. He has called us to build a fortress of prayer in this community. He has said to us \"I have chosen this place for My name to live\". The prayer room we build now will be like the Tabernacle, which was a foreshadowing of the temple, and this prayer room is a foreshadowing of the prayer house that we will build."
               </p>
@@ -67,8 +67,8 @@ pub fn HomePage() -> impl IntoView {
             <img class="absolute inset-0 min-w-full min-h-full" src="/farm.jpeg" />
           </div>
 
-          <TextBox title="Action" extra_class="row-span-2 sm:row-span-1 sm:col-span-2 md:col-span-3">
-            <div class="grid grid-cols-3 gap-6 pb-2 flex-1">
+          <TextBox title="Action" extra_class="row-span-2 xs:row-span-1 xs:col-span-2 md:col-span-3">
+            <div class="flex flex-col sm:grid sm:grid-cols-3 gap-6 pb-2 flex-1">
               <div class="flex flex-col gap-2">
                 <p class="text-lg font-semibold tracking-tight">"Pray With Us"</p>
                 <p class="leading-tight">
