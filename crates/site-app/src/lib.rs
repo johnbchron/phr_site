@@ -37,7 +37,7 @@ pub fn HomePage() -> impl IntoView {
         </div>
 
         // 3x2 grid
-        <div class="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-8 sm:grid-rows-4 md:grid-rows-3 grid-flow-row-dense gap-4 auto-rows-min">
+        <div class="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-flow-row-dense gap-4 auto-rows-min">
           <TextBox title="Values">
             <p class="leading-tight">
               "We love prayer. Prayer is essential. Prayer is meeting God. Through prayer we truly enter into our calling as priests. Prayer is one of the most beautiful things in life. Prayer is getting to a point where you focus on hearing God, and you change things. Through prayer you open up a space in your life for the Holy Spirit to work in you."
@@ -59,16 +59,14 @@ pub fn HomePage() -> impl IntoView {
             </p>
           </TextBox>
 
-          // image
-          // <div class="relative min-h-64 col-span-2 border-2 border-black/80 rounded-xl overflow-hidden">
-          //   <img class="absolute object-cover top-1/2 -translate-y-1/2 min-w-full" src="/farm.jpeg" />
-          // </div>
           <div class="relative flex justify-content-center items-center col-span-2 border-2 border-black/80 rounded-xl overflow-hidden min-h-64">
             <img class="absolute inset-0 min-w-full min-h-full" src="/farm.jpeg" />
           </div>
 
           <TextBox title="Action" extra_class="row-span-2 xs:row-span-1 xs:col-span-2 md:col-span-3">
-            <div class="flex flex-col sm:grid sm:grid-cols-3 gap-6 pb-2 flex-1">
+            <div class="flex flex-col sm:grid sm:grid-cols-2 sm:grid-rows-2 gap-6 pb-2 flex-1">
+
+              // pray with us
               <div class="flex flex-col gap-2">
                 <p class="text-lg font-semibold tracking-tight">"Pray With Us"</p>
                 <p class="leading-tight">
@@ -77,6 +75,8 @@ pub fn HomePage() -> impl IntoView {
                 <div class="flex-1" />
                 <ActionButton text="Pray With Us" href="mailto:contact@prayerhousereitnau.org" />
               </div>
+
+              // build with us
               <div class="flex flex-col gap-2">
                 <p class="text-lg font-semibold tracking-tight">"Build With Us"</p>
                 <p class="leading-tight">
@@ -85,6 +85,8 @@ pub fn HomePage() -> impl IntoView {
                 <div class="flex-1" />
                 <ActionButton text="Help Us" href="mailto:contact@prayerhousereitnau.org" />
               </div>
+
+              // support us
               <div class="flex flex-col gap-2">
                 <p class="text-lg font-semibold tracking-tight">"Support Us"</p>
                 <p class="leading-tight">
@@ -93,18 +95,30 @@ pub fn HomePage() -> impl IntoView {
                 <div class="flex-1" />
                 <div class="relative text-xs h-12 rounded-lg w-full flex items-center justify-center sm:w-auto border-2 border-black/20 leading-tight">
                   <div class="absolute inset-x-2 -inset-y-2 bg-white" />
-                  <p class="absolute inset-0 px-2 sm:px-4">
-                    "Give button not available at this time. For now, "
-                    <a
-                      href="mailto:contact@prayerhousereitnau.org"
-                      class="text-cyan-600 hover:text-cyan-500 transition"
-                      target="_blank" rel="noreferrer noopener"
-                    >
-                      "contact us"
-                    </a>
-                    " to give."
-                  </p>
+                  <div class="absolute inset-0 px-2 sm:px-4 flex flex-col justify-center items-center">
+                    <p>
+                      "Give button not available at this time. For now, "
+                      <a
+                        href="mailto:contact@prayerhousereitnau.org"
+                        class="text-cyan-600 hover:text-cyan-500 transition"
+                        target="_blank" rel="noreferrer noopener"
+                      >
+                        "contact us"
+                      </a>
+                      " to give."
+                    </p>
+                  </div>
                 </div>
+              </div>
+
+              // hear from us
+              <div class="flex flex-col gap-2">
+                <p class="text-lg font-semibold tracking-tight">"Hear From Us"</p>
+                <p class="leading-tight">
+                  "Sign up for our newsletter! We send regular updates about our vision, testimonies, and needs."
+                </p>
+                <div class="flex-1" />
+                <KeilaForm />
               </div>
             </div>
           </TextBox>
@@ -128,14 +142,38 @@ pub fn TextBox(
   }
 }
 
+const ACTION_BUTTON_CLASSES: &str =
+  "bg-cyan-600 hover:bg-cyan-500 focus:outline-none focus:ring-2 \
+   focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 \
+   text-white font-semibold h-12 px-6 rounded-lg w-full flex items-center \
+   justify-center sm:w-auto transition";
+
 #[component]
 pub fn ActionButton(text: &'static str, href: &'static str) -> impl IntoView {
   view! {
-    <a
-      class="bg-cyan-600 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-white font-semibold h-12 px-6 rounded-lg w-full flex items-center justify-center sm:w-auto mx-2 transition"
-      href={href} target="_blank" rel="noreferrer noopener"
-    >
+    <a class={ACTION_BUTTON_CLASSES} href={href} target="_blank" rel="noreferrer noopener">
       {text}
     </a>
+  }
+}
+
+#[component]
+pub fn KeilaForm() -> impl IntoView {
+  view! {
+    <form action="https://app.keila.io/forms/nfrm_mWVAmDVq" class="flex flex-col gap-2" method="post">
+      <div class="flex flex-col">
+        <div class="h-captcha" data-sitekey="a1c5fab7-71df-4ea4-af75-87a3d07c61de">
+        </div>
+        <script async="async" defer="defer" src="https://hcaptcha.com/1/api.js">
+        </script>
+      </div>
+      <input
+        id="contact_email" name="contact[email]" placeholder="Email" type="email"
+        class="px-2 h-12 w-full sm:w-auto border-2 border-black/20 rounded"
+      />
+      <button class={ACTION_BUTTON_CLASSES}>
+        Sign Up
+      </button>
+    </form>
   }
 }
